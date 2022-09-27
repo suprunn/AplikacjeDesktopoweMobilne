@@ -19,12 +19,17 @@ namespace FirstWinFormsApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Witaj w pierwszym programie WinForms");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
