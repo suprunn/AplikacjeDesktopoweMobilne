@@ -24,7 +24,18 @@ namespace FirstWinFormsApp
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Witaj w pierwszym programie WinFormss");
+
+            string strAge = textBoxWiek.Text;
+            if ( string.IsNullOrWhiteSpace(strAge))
+            {
+                MessageBox.Show("Nie podano wieku");
+                return;
+            }
+
+
+            string message = "Witaj " +textBoxName.Text +textBoxSurname.Text + "w tym programie";
+
+            MessageBox.Show(message);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,6 +44,16 @@ namespace FirstWinFormsApp
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

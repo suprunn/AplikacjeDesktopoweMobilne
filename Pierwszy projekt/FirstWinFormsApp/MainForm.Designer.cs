@@ -31,9 +31,12 @@ namespace FirstWinFormsApp
         {
             this.buttonFirst = new System.Windows.Forms.Button();
             this.buttonHello = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelName = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxSurname = new System.Windows.Forms.TextBox();
+            this.labelSurname = new System.Windows.Forms.Label();
+            this.textBoxWiek = new System.Windows.Forms.TextBox();
+            this.labelWiek = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonFirst
@@ -49,45 +52,75 @@ namespace FirstWinFormsApp
             // 
             // buttonHello
             // 
-            this.buttonHello.Location = new System.Drawing.Point(240, 221);
+            this.buttonHello.Location = new System.Drawing.Point(229, 243);
             this.buttonHello.Name = "buttonHello";
             this.buttonHello.Size = new System.Drawing.Size(111, 43);
             this.buttonHello.TabIndex = 1;
             this.buttonHello.Text = "Przycisk2";
             this.buttonHello.UseVisualStyleBackColor = true;
-            this.buttonHello.Click += new System.EventHandler(this.button1_Click);
+            this.buttonHello.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
-            // label1
+            // labelName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(284, 71);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(30, 15);
+            this.labelName.TabIndex = 2;
+            this.labelName.Text = "imię";
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(284, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 4;
+            this.textBoxName.Location = new System.Drawing.Point(284, 89);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(132, 23);
+            this.textBoxName.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(262, 139);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(337, 23);
-            this.textBox2.TabIndex = 5;
+            this.textBoxSurname.Location = new System.Drawing.Point(284, 139);
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.Size = new System.Drawing.Size(132, 23);
+            this.textBoxSurname.TabIndex = 5;
+            // 
+            // labelSurname
+            // 
+            this.labelSurname.AutoSize = true;
+            this.labelSurname.Location = new System.Drawing.Point(284, 121);
+            this.labelSurname.Name = "labelSurname";
+            this.labelSurname.Size = new System.Drawing.Size(57, 15);
+            this.labelSurname.TabIndex = 6;
+            this.labelSurname.Text = "Nazwisko";
+            this.labelSurname.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // textBoxWiek
+            // 
+            this.textBoxWiek.Location = new System.Drawing.Point(284, 186);
+            this.textBoxWiek.Name = "textBoxWiek";
+            this.textBoxWiek.Size = new System.Drawing.Size(132, 23);
+            this.textBoxWiek.TabIndex = 7;
+            this.textBoxWiek.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // labelWiek
+            // 
+            this.labelWiek.AutoSize = true;
+            this.labelWiek.Location = new System.Drawing.Point(284, 169);
+            this.labelWiek.Name = "labelWiek";
+            this.labelWiek.Size = new System.Drawing.Size(33, 15);
+            this.labelWiek.TabIndex = 8;
+            this.labelWiek.Text = "Wiek";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1369, 502);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelWiek);
+            this.Controls.Add(this.textBoxWiek);
+            this.Controls.Add(this.labelSurname);
+            this.Controls.Add(this.textBoxSurname);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.buttonHello);
             this.Controls.Add(this.buttonFirst);
             this.Name = "MainForm";
@@ -100,11 +133,17 @@ namespace FirstWinFormsApp
 
         #endregion
 
+
+
+
         private System.Windows.Forms.Button buttonFirst;
         private System.Windows.Forms.Button buttonHello;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxSurname;
+        private System.Windows.Forms.Label labelSurname;
+        private System.Windows.Forms.TextBox textBoxWiek;
+        private System.Windows.Forms.Label labelWiek;
     }
 }
 
