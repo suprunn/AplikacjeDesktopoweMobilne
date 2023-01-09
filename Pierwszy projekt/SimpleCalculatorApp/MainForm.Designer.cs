@@ -32,7 +32,7 @@ namespace SimpleCalculatorApp
             this.labelFirstNumber = new System.Windows.Forms.Label();
             this.labelSecoundNumber = new System.Windows.Forms.Label();
             this.FirstNumber = new System.Windows.Forms.TextBox();
-            this.SecoundNumber = new System.Windows.Forms.TextBox();
+            this.SecondNumber = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonSubstract = new System.Windows.Forms.Button();
             this.buttonMul = new System.Windows.Forms.Button();
@@ -65,12 +65,12 @@ namespace SimpleCalculatorApp
             this.FirstNumber.Size = new System.Drawing.Size(100, 23);
             this.FirstNumber.TabIndex = 2;
             // 
-            // SecoundNumber
+            // SecondNumber
             // 
-            this.SecoundNumber.Location = new System.Drawing.Point(203, 83);
-            this.SecoundNumber.Name = "SecoundNumber";
-            this.SecoundNumber.Size = new System.Drawing.Size(100, 23);
-            this.SecoundNumber.TabIndex = 3;
+            this.SecondNumber.Location = new System.Drawing.Point(203, 83);
+            this.SecondNumber.Name = "SecondNumber";
+            this.SecondNumber.Size = new System.Drawing.Size(100, 23);
+            this.SecondNumber.TabIndex = 3;
             // 
             // buttonAdd
             // 
@@ -90,6 +90,7 @@ namespace SimpleCalculatorApp
             this.buttonSubstract.TabIndex = 5;
             this.buttonSubstract.Text = "-";
             this.buttonSubstract.UseVisualStyleBackColor = true;
+            
             // 
             // buttonMul
             // 
@@ -99,7 +100,8 @@ namespace SimpleCalculatorApp
             this.buttonMul.TabIndex = 6;
             this.buttonMul.Text = "*";
             this.buttonMul.UseVisualStyleBackColor = true;
-           
+            
+
             // 
             // buttonDiv
             // 
@@ -109,6 +111,7 @@ namespace SimpleCalculatorApp
             this.buttonDiv.TabIndex = 7;
             this.buttonDiv.Text = "/";
             this.buttonDiv.UseVisualStyleBackColor = true;
+           
             // 
             // labelResult
             // 
@@ -128,7 +131,7 @@ namespace SimpleCalculatorApp
             this.Controls.Add(this.buttonMul);
             this.Controls.Add(this.buttonSubstract);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.SecoundNumber);
+            this.Controls.Add(this.SecondNumber);
             this.Controls.Add(this.FirstNumber);
             this.Controls.Add(this.labelSecoundNumber);
             this.Controls.Add(this.labelFirstNumber);
@@ -145,7 +148,7 @@ namespace SimpleCalculatorApp
         private System.Windows.Forms.Label labelFirstNumber;
         private System.Windows.Forms.Label labelSecoundNumber;
         private System.Windows.Forms.TextBox FirstNumber;
-        private System.Windows.Forms.TextBox SecoundNumber;
+        private System.Windows.Forms.TextBox SecondNumber;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonSubstract;
         private System.Windows.Forms.Button buttonMul;

@@ -18,16 +18,93 @@ namespace SimpleCalculatorApp
         }
 
 
+        private void buttonAdd_Click_TMP(object sender, EventArgs e)
+        {
+            int firstNumber;
+            int secondNumber;
+            if (Validate(FirstNumber.Text, SecondNumber.Text,
+                out firstNumber, out secondNumber))
+            {
+                Calculate('+', firstNumber, secondNumber);
+            }
+            else
+            {
+                ShowErrorMessage();
+            }
+        }
+
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             int firstNumber;
             int secondNumber;
-            if ( int.TryParse(FirstNumber.Text, out firstNumber)
-                && int.TryParse(SecoundNumber.Text, out secondNumber))
+            if (int.TryParse(FirstNumber.Text, out firstNumber)
+                && int.TryParse(SecondNumber.Text, out secondNumber))
             {
                 int result = firstNumber + secondNumber;
-                labelResult.Text = "Wynik operacij dodawania: " + result;
+                labelResult.Text = "Wynik operacji dodawania: " + result;
+            }
+            else
+            {
+                labelResult.Text = "Podano nieprawidłowe dane";
             }
         }
+
+        private void buttonSub_Click(object sender, EventArgs e)
+        {
+            int firstNumber;
+            int secondNumber;
+            if (int.TryParse(FirstNumber.Text, out firstNumber)
+                && int.TryParse(SecondNumber.Text, out secondNumber))
+            {
+                int result = firstNumber - secondNumber;
+                labelResult.Text = "Wynik operacji odejmowania: " + result;
+            }
+            else
+            {
+                labelResult.Text = "Podano nieprawidłowe dane";
+            }
+        }
+
+        private void ShowErrorMessage()
+        {
+            labelResult.Text = "Podano nieprawidłowe dane";
+        }
+
+        private bool Validate(string firstStrNumber, string secondStrNumber,
+                              out int firstNumber, out int secondNumber)
+        {
+            //firstNumber = 0;
+            secondNumber = 0;
+            return int.TryParse(firstStrNumber, out firstNumber)
+                && int.TryParse(secondStrNumber, out secondNumber);
+        }
+
+        private void Calculate(char operatorToDo, int firstNumber, int secondNumber)
+        {
+            int result;
+            switch (operatorToDo)
+            {
+                case '+':
+                    result = firstNumber + secondNumber;
+                    labelResult.Text = "Wynik operacji dodawania: " + result;
+                    break;
+                case '-':
+                    result = firstNumber - secondNumber;
+                    labelResult.Text = "Wynik operacji odejmowania: " + result;
+                    break;
+                case '*':
+                    result = firstNumber * secondNumber;
+                    labelResult.Text = "Wynik operacji mnożenia: " + result;
+                    break;
+                case '/':
+                    result = firstNumber / secondNumber;
+                    labelResult.Text = "Wynik operacji dzielenia: " + result;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
     }
 }
