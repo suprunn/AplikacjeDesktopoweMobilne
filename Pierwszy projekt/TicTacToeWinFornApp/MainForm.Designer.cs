@@ -1,7 +1,7 @@
 ﻿
 namespace TicTacToeWinFornApp
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,9 +31,8 @@ namespace TicTacToeWinFornApp
         {
             this.panelConfigGame = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.buttonNewGame = new System.Windows.Forms.Button();
+            this.comboBoxWhoStarts = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanelBoard = new System.Windows.Forms.TableLayoutPanel();
             this.LeftTopButton = new System.Windows.Forms.Button();
             this.MiddleTopButton = new System.Windows.Forms.Button();
@@ -51,15 +50,15 @@ namespace TicTacToeWinFornApp
             // panelConfigGame
             // 
             this.panelConfigGame.Controls.Add(this.label1);
-            this.panelConfigGame.Controls.Add(this.button11);
-            this.panelConfigGame.Controls.Add(this.button10);
-            this.panelConfigGame.Controls.Add(this.comboBox1);
+            this.panelConfigGame.Controls.Add(this.buttonNewGame);
+            this.panelConfigGame.Controls.Add(this.comboBoxWhoStarts);
             this.panelConfigGame.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelConfigGame.Location = new System.Drawing.Point(0, 0);
             this.panelConfigGame.Margin = new System.Windows.Forms.Padding(10);
             this.panelConfigGame.Name = "panelConfigGame";
             this.panelConfigGame.Size = new System.Drawing.Size(851, 76);
             this.panelConfigGame.TabIndex = 0;
+            this.panelConfigGame.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // label1
             // 
@@ -70,35 +69,27 @@ namespace TicTacToeWinFornApp
             this.label1.TabIndex = 3;
             this.label1.Text = "Kto zaczyna grę:";
             // 
-            // button11
+            // buttonNewGame
             // 
-            this.button11.Location = new System.Drawing.Point(645, 12);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "Reset";
-            this.button11.UseVisualStyleBackColor = true;
+            this.buttonNewGame.Location = new System.Drawing.Point(387, 12);
+            this.buttonNewGame.Name = "buttonNewGame";
+            this.buttonNewGame.Size = new System.Drawing.Size(75, 23);
+            this.buttonNewGame.TabIndex = 1;
+            this.buttonNewGame.Text = "New Game";
+            this.buttonNewGame.UseVisualStyleBackColor = true;
+            this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
             // 
-            // button10
+            // comboBoxWhoStarts
             // 
-            this.button10.Location = new System.Drawing.Point(387, 12);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "Start";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxWhoStarts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWhoStarts.FormattingEnabled = true;
+            this.comboBoxWhoStarts.Items.AddRange(new object[] {
             "Kółko",
             "Krzyżyk"});
-            this.comboBox1.Location = new System.Drawing.Point(35, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxWhoStarts.Location = new System.Drawing.Point(35, 29);
+            this.comboBoxWhoStarts.Name = "comboBoxWhoStarts";
+            this.comboBoxWhoStarts.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxWhoStarts.TabIndex = 0;
             // 
             // tableLayoutPanelBoard
             // 
@@ -126,6 +117,7 @@ namespace TicTacToeWinFornApp
             this.tableLayoutPanelBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tableLayoutPanelBoard.Size = new System.Drawing.Size(851, 432);
             this.tableLayoutPanelBoard.TabIndex = 0;
+            this.tableLayoutPanelBoard.Visible = false;
             // 
             // LeftTopButton
             // 
@@ -135,6 +127,7 @@ namespace TicTacToeWinFornApp
             this.LeftTopButton.Size = new System.Drawing.Size(273, 135);
             this.LeftTopButton.TabIndex = 0;
             this.LeftTopButton.UseVisualStyleBackColor = true;
+            this.LeftTopButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // MiddleTopButton
             // 
@@ -144,6 +137,7 @@ namespace TicTacToeWinFornApp
             this.MiddleTopButton.Size = new System.Drawing.Size(273, 135);
             this.MiddleTopButton.TabIndex = 1;
             this.MiddleTopButton.UseVisualStyleBackColor = true;
+            this.MiddleTopButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // RightTopButton
             // 
@@ -153,6 +147,7 @@ namespace TicTacToeWinFornApp
             this.RightTopButton.Size = new System.Drawing.Size(283, 135);
             this.RightTopButton.TabIndex = 2;
             this.RightTopButton.UseVisualStyleBackColor = true;
+            this.RightTopButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // LeftMiddleButton
             // 
@@ -162,6 +157,7 @@ namespace TicTacToeWinFornApp
             this.LeftMiddleButton.Size = new System.Drawing.Size(273, 135);
             this.LeftMiddleButton.TabIndex = 3;
             this.LeftMiddleButton.UseVisualStyleBackColor = true;
+            this.LeftMiddleButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // MiddleMiddleButton
             // 
@@ -171,6 +167,7 @@ namespace TicTacToeWinFornApp
             this.MiddleMiddleButton.Size = new System.Drawing.Size(273, 135);
             this.MiddleMiddleButton.TabIndex = 4;
             this.MiddleMiddleButton.UseVisualStyleBackColor = true;
+            this.MiddleMiddleButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // RightMiddleButton
             // 
@@ -180,6 +177,7 @@ namespace TicTacToeWinFornApp
             this.RightMiddleButton.Size = new System.Drawing.Size(283, 135);
             this.RightMiddleButton.TabIndex = 5;
             this.RightMiddleButton.UseVisualStyleBackColor = true;
+            this.RightMiddleButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // LeftBottomButton
             // 
@@ -189,6 +187,7 @@ namespace TicTacToeWinFornApp
             this.LeftBottomButton.Size = new System.Drawing.Size(273, 140);
             this.LeftBottomButton.TabIndex = 6;
             this.LeftBottomButton.UseVisualStyleBackColor = true;
+            this.LeftBottomButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // MiddleBottomButton
             // 
@@ -198,6 +197,7 @@ namespace TicTacToeWinFornApp
             this.MiddleBottomButton.Size = new System.Drawing.Size(273, 140);
             this.MiddleBottomButton.TabIndex = 7;
             this.MiddleBottomButton.UseVisualStyleBackColor = true;
+            this.MiddleBottomButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // RightBottomButton
             // 
@@ -207,15 +207,16 @@ namespace TicTacToeWinFornApp
             this.RightBottomButton.Size = new System.Drawing.Size(283, 140);
             this.RightBottomButton.TabIndex = 8;
             this.RightBottomButton.UseVisualStyleBackColor = true;
+            this.RightBottomButton.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 508);
             this.Controls.Add(this.tableLayoutPanelBoard);
             this.Controls.Add(this.panelConfigGame);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Gra kółko i krzyżyk";
             this.panelConfigGame.ResumeLayout(false);
             this.panelConfigGame.PerformLayout();
@@ -228,9 +229,8 @@ namespace TicTacToeWinFornApp
 
         private System.Windows.Forms.Panel panelConfigGame;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBoard;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button buttonNewGame;
+        private System.Windows.Forms.ComboBox comboBoxWhoStarts;
         private System.Windows.Forms.Button LeftTopButton;
         private System.Windows.Forms.Button MiddleTopButton;
         private System.Windows.Forms.Button RightTopButton;
